@@ -50,6 +50,8 @@
 		C110EC5322CFAA42007FF845 /* PathPrefixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC5222CFAA42007FF845 /* PathPrefixTests.swift */; };
 		C110EC5522CFAB03007FF845 /* Factory+PathPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC5422CFAB03007FF845 /* Factory+PathPrefix.swift */; };
 		C110EC5722CFAE8F007FF845 /* PatternOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */; };
+		C12354CD22D907A1007EC78D /* URL+Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12354CC22D907A1007EC78D /* URL+Scheme.swift */; };
+		C12354CF22D90855007EC78D /* URLSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12354CE22D90855007EC78D /* URLSchemeTests.swift */; };
 		OBJ_21 /* URLMatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* URLMatchable.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* MyNameIsURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */; };
@@ -102,7 +104,9 @@
 		C110EC5222CFAA42007FF845 /* PathPrefixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPrefixTests.swift; sourceTree = "<group>"; };
 		C110EC5422CFAB03007FF845 /* Factory+PathPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+PathPrefix.swift"; sourceTree = "<group>"; };
 		C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternOperatorTests.swift; sourceTree = "<group>"; };
-		"MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyNameIsURL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12354CC22D907A1007EC78D /* URL+Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Scheme.swift"; sourceTree = "<group>"; };
+		C12354CE22D90855007EC78D /* URLSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeTests.swift; sourceTree = "<group>"; };
+		"MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyNameIsURL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MyNameIsURL::MyNameIsURLTests::Product" /* MyNameIsURLTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyNameIsURLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* URLMatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMatchable.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C110EC2622CD113D007FF845 /* String+HostComponents.swift */,
+				C12354CC22D907A1007EC78D /* URL+Scheme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				C110EC4A22CE3018007FF845 /* OrTests.swift */,
 				C110EC4C22CE312D007FF845 /* NotTests.swift */,
 				C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */,
+				C12354CE22D90855007EC78D /* URLSchemeTests.swift */,
 			);
 			name = MyNameIsURLTests;
 			path = Tests/MyNameIsURLTests;
@@ -325,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				C12354CD22D907A1007EC78D /* URL+Scheme.swift in Sources */,
 				OBJ_21 /* URLMatchable.swift in Sources */,
 				C110EC3422CD149E007FF845 /* Not.swift in Sources */,
 				C110EC2B22CD1371007FF845 /* Path.swift in Sources */,
@@ -359,6 +366,7 @@
 				C110EC4F22CF9615007FF845 /* Factory+HostSuffix.swift in Sources */,
 				C110EC1D22CD0B3D007FF845 /* DomainTests.swift in Sources */,
 				C110EC4122CD9A43007FF845 /* Factory+Scheme.swift in Sources */,
+				C12354CF22D90855007EC78D /* URLSchemeTests.swift in Sources */,
 				C110EC4722CD9C81007FF845 /* AndTests.swift in Sources */,
 				C110EC3622CD1558007FF845 /* HostTests.swift in Sources */,
 				C110EC5122CF9725007FF845 /* HostSuffixTests.swift in Sources */,
@@ -470,6 +478,7 @@
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
@@ -549,6 +558,7 @@
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
