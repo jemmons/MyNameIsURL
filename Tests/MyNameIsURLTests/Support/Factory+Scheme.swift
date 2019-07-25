@@ -21,6 +21,8 @@ extension Factory {
       MyNameIsURL.Scheme.sms,
       MyNameIsURL.Scheme.mailto,
       MyNameIsURL.Scheme.webcal,
+      MyNameIsURL.Scheme.file,
+      MyNameIsURL.Scheme.ftp,
     ]
   }
 }

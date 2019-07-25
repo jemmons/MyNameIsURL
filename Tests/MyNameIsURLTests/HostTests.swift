@@ -5,26 +5,24 @@ import MyNameIsURL
 
 
 class HostTests: XCTestCase {
-  func testStringMatching() {
-    Factory.Host.FromString.failing.forEach { it in
-      XCTAssertFalse(it.matches(url: Factory.url))
-    }
-    XCTAssert(Factory.Host.FromString.success.matches(url: Factory.url))
+  func testMatching() {
+    XCTAssert(Factory.Host.success.matches(url: Factory.url))
   }
   
+  
+  func testNil() {
+    XCTAssertFalse(Factory.Host.success.matches(url: Factory.nilURL))
+  }
 
-  func testCompMatching() {
-    Factory.Host.FromComponents.failing.forEach { it in
-      XCTAssertFalse(it.matches(url: Factory.url))
-    }
-    XCTAssert(Factory.Host.FromComponents.success.matches(url: Factory.url))
-  }
   
-  
-  func testDomainMatching() {
-    Factory.Host.FromDomains.failing.forEach { it in
+  func testNonMatching() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.Host.failing.forEach { it in
       XCTAssertFalse(it.matches(url: Factory.url))
+      XCTAssertFalse(it.matches(url: Factory.nilURL))
+      ran.fulfill()
     }
-    XCTAssert(Factory.Host.FromDomains.success.matches(url: Factory.url))
+    wait(for: [ran], timeout: 0)
   }
 }

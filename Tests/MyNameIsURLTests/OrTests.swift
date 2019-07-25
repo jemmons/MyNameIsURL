@@ -7,11 +7,12 @@ import MyNameIsURL
 class OrTests: XCTestCase {
   let subject = Or(
     Factory.Scheme.success,
-    Factory.Host.FromString.success,
-    Factory.Path.FromString.success)
+    Factory.Host.success,
+    Factory.Path.success)
   
   func testSuccess() {
     XCTAssert(subject.matches(url: Factory.url))
+    XCTAssertFalse(subject.matches(url: Factory.nilURL))
 
     let badScheme = URL(string: "https://www.example.com/foo/bar")!
     XCTAssert(subject.matches(url: badScheme))

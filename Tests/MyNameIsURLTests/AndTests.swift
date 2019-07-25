@@ -7,18 +7,19 @@ import MyNameIsURL
 class AndTests: XCTestCase {
   let subject = And(
     Factory.Scheme.success,
-    Factory.Host.FromString.success,
-    Factory.Path.FromString.success)
+    Factory.Host.success,
+    Factory.Path.success)
 
   func testSuccess() {
     XCTAssert(subject.matches(url: Factory.url))
+    XCTAssertFalse(subject.matches(url: Factory.nilURL))
   }
   
   
   func testFailure() {
     let badScheme = URL(string: "https://www.example.com/foo/bar")!
     XCTAssertFalse(subject.matches(url: badScheme))
-    
+
     let badHost = URL(string: "http://www2.example.com/foo/bar")!
     XCTAssertFalse(subject.matches(url: badHost))
     

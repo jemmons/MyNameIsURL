@@ -21,14 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		C110EC1922CD0861007FF845 /* HostRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC1822CD0861007FF845 /* HostRepresentation.swift */; };
 		C110EC1B22CD08D6007FF845 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC1A22CD08D6007FF845 /* Domain.swift */; };
 		C110EC1D22CD0B3D007FF845 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC1C22CD0B3D007FF845 /* DomainTests.swift */; };
 		C110EC2422CD0D05007FF845 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2322CD0D05007FF845 /* Host.swift */; };
-		C110EC2722CD113D007FF845 /* String+HostComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2622CD113D007FF845 /* String+HostComponents.swift */; };
 		C110EC2922CD1268007FF845 /* HostSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2822CD1268007FF845 /* HostSuffix.swift */; };
 		C110EC2B22CD1371007FF845 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2A22CD1371007FF845 /* Path.swift */; };
-		C110EC2C22CD13A7007FF845 /* PathRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2122CD0C98007FF845 /* PathRepresentation.swift */; };
 		C110EC2E22CD13C8007FF845 /* PathPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2D22CD13C8007FF845 /* PathPrefix.swift */; };
 		C110EC3022CD141D007FF845 /* And.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC2F22CD141D007FF845 /* And.swift */; };
 		C110EC3222CD1476007FF845 /* Or.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC3122CD1476007FF845 /* Or.swift */; };
@@ -52,6 +49,8 @@
 		C110EC5722CFAE8F007FF845 /* PatternOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */; };
 		C12354CD22D907A1007EC78D /* URL+Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12354CC22D907A1007EC78D /* URL+Scheme.swift */; };
 		C12354CF22D90855007EC78D /* URLSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12354CE22D90855007EC78D /* URLSchemeTests.swift */; };
+		C190154722E2253F00FADA9D /* Scheme+URLMatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */; };
+		C190154922E2342C00FADA9D /* String+HostComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C190154822E2342C00FADA9D /* String+HostComponents.swift */; };
 		OBJ_21 /* URLMatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* URLMatchable.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* MyNameIsURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */; };
@@ -75,12 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C110EC1822CD0861007FF845 /* HostRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostRepresentation.swift; sourceTree = "<group>"; };
 		C110EC1A22CD08D6007FF845 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		C110EC1C22CD0B3D007FF845 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
-		C110EC2122CD0C98007FF845 /* PathRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathRepresentation.swift; sourceTree = "<group>"; };
 		C110EC2322CD0D05007FF845 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
-		C110EC2622CD113D007FF845 /* String+HostComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HostComponents.swift"; sourceTree = "<group>"; };
 		C110EC2822CD1268007FF845 /* HostSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSuffix.swift; sourceTree = "<group>"; };
 		C110EC2A22CD1371007FF845 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		C110EC2D22CD13C8007FF845 /* PathPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPrefix.swift; sourceTree = "<group>"; };
@@ -106,6 +102,8 @@
 		C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternOperatorTests.swift; sourceTree = "<group>"; };
 		C12354CC22D907A1007EC78D /* URL+Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Scheme.swift"; sourceTree = "<group>"; };
 		C12354CE22D90855007EC78D /* URLSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeTests.swift; sourceTree = "<group>"; };
+		C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scheme+URLMatchable.swift"; sourceTree = "<group>"; };
+		C190154822E2342C00FADA9D /* String+HostComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HostComponents.swift"; sourceTree = "<group>"; };
 		"MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyNameIsURL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MyNameIsURL::MyNameIsURLTests::Product" /* MyNameIsURLTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyNameIsURLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -134,9 +132,8 @@
 		C110EC1F22CD0C6B007FF845 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				C110EC4422CD9BC4007FF845 /* Scheme.swift */,
 				C110EC1A22CD08D6007FF845 /* Domain.swift */,
-				C110EC1822CD0861007FF845 /* HostRepresentation.swift */,
-				C110EC2122CD0C98007FF845 /* PathRepresentation.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -149,7 +146,7 @@
 				C110EC2822CD1268007FF845 /* HostSuffix.swift */,
 				C110EC2A22CD1371007FF845 /* Path.swift */,
 				C110EC2D22CD13C8007FF845 /* PathPrefix.swift */,
-				C110EC4422CD9BC4007FF845 /* Scheme.swift */,
+				C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */,
 				C110EC2F22CD141D007FF845 /* And.swift */,
 				C110EC3122CD1476007FF845 /* Or.swift */,
 				C110EC3322CD149E007FF845 /* Not.swift */,
@@ -160,7 +157,7 @@
 		C110EC2522CD0E56007FF845 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C110EC2622CD113D007FF845 /* String+HostComponents.swift */,
+				C190154822E2342C00FADA9D /* String+HostComponents.swift */,
 				C12354CC22D907A1007EC78D /* URL+Scheme.swift */,
 			);
 			path = Extensions;
@@ -331,20 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				C190154922E2342C00FADA9D /* String+HostComponents.swift in Sources */,
 				C12354CD22D907A1007EC78D /* URL+Scheme.swift in Sources */,
 				OBJ_21 /* URLMatchable.swift in Sources */,
 				C110EC3422CD149E007FF845 /* Not.swift in Sources */,
 				C110EC2B22CD1371007FF845 /* Path.swift in Sources */,
-				C110EC1922CD0861007FF845 /* HostRepresentation.swift in Sources */,
 				C110EC4522CD9BC4007FF845 /* Scheme.swift in Sources */,
 				C110EC3022CD141D007FF845 /* And.swift in Sources */,
-				C110EC2C22CD13A7007FF845 /* PathRepresentation.swift in Sources */,
 				C110EC2922CD1268007FF845 /* HostSuffix.swift in Sources */,
 				C110EC2E22CD13C8007FF845 /* PathPrefix.swift in Sources */,
+				C190154722E2253F00FADA9D /* Scheme+URLMatchable.swift in Sources */,
 				C110EC1B22CD08D6007FF845 /* Domain.swift in Sources */,
 				C110EC2422CD0D05007FF845 /* Host.swift in Sources */,
 				C110EC3222CD1476007FF845 /* Or.swift in Sources */,
-				C110EC2722CD113D007FF845 /* String+HostComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

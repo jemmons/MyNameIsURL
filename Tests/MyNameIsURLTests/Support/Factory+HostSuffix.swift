@@ -5,33 +5,6 @@ import MyNameIsURL
 
 extension Factory {
   enum HostSuffix {
-    enum FromString {
-      static let failing = [
-        MyNameIsURL.HostSuffix("example"),
-        MyNameIsURL.HostSuffix("."),
-        MyNameIsURL.HostSuffix("xcom"),
-        MyNameIsURL.HostSuffix("x.com"),
-        MyNameIsURL.HostSuffix("comx"),
-        MyNameIsURL.HostSuffix("www"),
-        MyNameIsURL.HostSuffix(".com "),
-        MyNameIsURL.HostSuffix(" .com"),
-        MyNameIsURL.HostSuffix("xwww.example.com"),
-        MyNameIsURL.HostSuffix("www.example.comx"),
-      ]
-      
-      
-      static let success = [
-        MyNameIsURL.HostSuffix(""),
-        MyNameIsURL.HostSuffix("m"),
-        MyNameIsURL.HostSuffix("com"),
-        MyNameIsURL.HostSuffix(".com"),
-        MyNameIsURL.HostSuffix("example.com"),
-        MyNameIsURL.HostSuffix(".example.com"),
-        MyNameIsURL.HostSuffix("www.example.com"),
-      ]
-    }
-    
-    
     enum FromComponents {
       static let failing = [
         MyNameIsURL.HostSuffix(["example"]),
@@ -53,6 +26,7 @@ extension Factory {
       
       
       static let success = [
+        MyNameIsURL.HostSuffix([] as [String]),
         MyNameIsURL.HostSuffix(["com"]),
         MyNameIsURL.HostSuffix(["example", "com"]),
         MyNameIsURL.HostSuffix(["www", "example", "com"]),
@@ -74,6 +48,7 @@ extension Factory {
       ]
       
       static let success = [
+        MyNameIsURL.HostSuffix([] as [Domain]),
         try! MyNameIsURL.HostSuffix([Domain(name: "com")]),
         try! MyNameIsURL.HostSuffix([Domain(name: "example"), Domain(name: "com")]),
         try! MyNameIsURL.HostSuffix([Domain(name: "www"), Domain(name: "example"), Domain(name: "com")]),

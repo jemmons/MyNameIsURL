@@ -27,6 +27,17 @@ class DomainTests: XCTestCase  {
   }
   
   
+  func testTooLongNames() {
+    do {
+      _ = try Domain(name: Factory.DomainName.tooLong)
+      XCTFail()
+    } catch Domain.Size.tooLong(let s) {
+      XCTAssertEqual(Factory.DomainName.tooLong, s)
+    } catch {
+      XCTFail()
+    }
+  }
+  
   func testEquality() {
     Factory.DomainName.valid.forEach { name in
       XCTAssertEqual(try! Domain(name: name), try! Domain(name: name))

@@ -2,27 +2,44 @@ import Foundation
 
 
 
+/**
+ Type that matches a `URL` based on comparison with either the `URL`’s `path` or `pathComponetns` propery, depending on the initializer used.
+ 
+ Usage:
+ ```
+ let url = URL(string: "http://example.com/foo/bar")!
+ Path("/foo/bar").matches(url)          //> true
+ Path("/foo").matches(url)              //> false
+ ```
+ 
+ - SeeAlso: `PathPrefix`
+ */
 public struct Path: URLMatchable {
-  private let pathRepresentation: PathRepresentation
-  
-  
+  private let path: String
+  /**
+   Wraps the given string to create a new `Path` value. It matches `URL`s based on their `path` property.
+   
+   The given `path` should not include a trailing slash. Both “http://example.com/foo” and “http://example.com/foo/” have a `path` property of `"/foo"`. Thus `Path("/foo/")` will never match either.
+
+   - SeeAlso: `PathPrefix`
+   
+   - Parameter path: The path to match. It will be compared for equality against `URL`’s `path` property.
+   
+     It should not contain a trailing slash (see “Discussion”, above).
+   */
   public init(_ path: String) {
-    pathRepresentation = .string(path)
+    self.path = path
   }
   
   
-  public init(_ components: [String]) {
-    pathRepresentation = .components(components)
-  }
+  /**
+   Predicate that determines whether a `Path` matches a given `URL`.
+   
+   - Parameter url: The `URL` to be matched.
   
-  
+   - Returns: `true` if the wrapped path is equivalent to `url.path`. Otherwise, `false`.
+   */
   public func matches(url: URL) -> Bool {
-    switch pathRepresentation {
-    case .string(let path):
-      return url.path == path
-    
-    case .components(let comps):
-      return url.pathComponents == comps
-    }
+    return url.path == path
   }
 }

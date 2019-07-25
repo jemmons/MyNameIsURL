@@ -5,24 +5,25 @@ import MyNameIsURL
 
 
 class PathPrefixTests: XCTestCase {
-  func testFromString() {
-    Factory.PathPrefix.FromString.failing.forEach { it in
-      XCTAssertFalse(it.matches(url: Factory.url))
-    }
-    
-    Factory.PathPrefix.FromString.success.forEach { it in
+  func testMatches() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.PathPrefix.success.forEach { it in
       XCTAssert(it.matches(url: Factory.url))
+      ran.fulfill()
     }
+    wait(for: [ran], timeout: 0)
   }
   
   
-  func testFromComponents() {
-    Factory.PathPrefix.FromComponents.failing.forEach { it in
+  func testNonMatches() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.PathPrefix.failing.forEach { it in
       XCTAssertFalse(it.matches(url: Factory.url))
+      XCTAssertFalse(it.matches(url: Factory.nilURL))
+      ran.fulfill()
     }
-
-    Factory.PathPrefix.FromComponents.success.forEach { it in
-      XCTAssert(it.matches(url: Factory.url))
-    }
+    wait(for: [ran], timeout: 0)
   }
 }

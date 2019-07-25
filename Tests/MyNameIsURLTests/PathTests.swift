@@ -5,18 +5,30 @@ import MyNameIsURL
 
 
 class PathTests: XCTestCase {
-  func testFromString() {
-    Factory.Path.FromString.failing.forEach { it in
-      XCTAssertFalse(it.matches(url: Factory.url))
-    }
-    XCTAssert(Factory.Path.FromString.success.matches(url: Factory.url))
+  func testMatches() {
+    XCTAssert(Factory.Path.success.matches(url: Factory.url))
   }
   
   
-  func testFromComponents() {
-    Factory.Path.FromComponents.failing.forEach { it in
+  func testNoNilMatches() {
+    XCTAssertFalse(Factory.Path.success.matches(url: Factory.nilURL))
+  }
+  
+  
+  func testNonMatches() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.Path.failing.forEach { it in
       XCTAssertFalse(it.matches(url: Factory.url))
+      ran.fulfill()
     }
-    XCTAssert(Factory.Path.FromComponents.success.matches(url: Factory.url))
+    wait(for: [ran], timeout: 0)
+  }
+
+
+  func testTrailingSlash() {
+    let subject = URL(string: "https://example.com/foo/bar/")!
+    XCTAssert(Path("/foo/bar").matches(url: subject))
+    XCTAssertFalse(Path("/foo/bar/").matches(url: subject))
   }
 }

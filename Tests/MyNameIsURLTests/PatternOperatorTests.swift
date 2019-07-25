@@ -7,9 +7,9 @@ import MyNameIsURL
 class PatternOperatorTests: XCTestCase {
   func testHostMatch() {
     switch Factory.url {
-    case Not(Factory.Host.FromString.success):
+    case Not(Factory.Host.success):
       XCTFail()
-    case Factory.Host.FromString.success:
+    case Factory.Host.success:
       XCTAssert(true)
     default:
       XCTFail()
@@ -18,7 +18,7 @@ class PatternOperatorTests: XCTestCase {
   
   
   func testHostSuffixMatch() {
-    Factory.HostSuffix.FromString.success.forEach { it in
+    Factory.HostSuffix.FromComponents.success.forEach { it in
       switch Factory.url {
       case Not(it):
         XCTFail()
@@ -33,9 +33,9 @@ class PatternOperatorTests: XCTestCase {
   
   func testPathMatch() {
     switch Factory.url {
-    case Not(Factory.Path.FromString.success):
+    case Not(Factory.Path.success):
       XCTFail()
-    case Factory.Path.FromString.success:
+    case Factory.Path.success:
       XCTAssert(true)
     default:
       XCTFail()
@@ -44,7 +44,7 @@ class PatternOperatorTests: XCTestCase {
   
   
   func testPathPrefixMatch() {
-    Factory.PathPrefix.FromString.success.forEach { it in
+    Factory.PathPrefix.success.forEach { it in
       switch Factory.url {
       case Not(it):
         XCTFail()
@@ -72,8 +72,8 @@ class PatternOperatorTests: XCTestCase {
   func testAndMatch() {
     let subject = And(
       Factory.Scheme.success,
-      Factory.Host.FromString.success,
-      Factory.Path.FromString.success)
+      Factory.Host.success,
+      Factory.Path.success)
     
     switch Factory.url {
     case Not(subject):
@@ -89,8 +89,8 @@ class PatternOperatorTests: XCTestCase {
   func testOrMatch() {
     let subject = Or(
       Factory.Scheme.success,
-      Factory.Host.FromString.success,
-      Factory.Path.FromString.success)
+      Factory.Host.success,
+      Factory.Path.success)
     
     switch Factory.url {
     case Not(subject):
