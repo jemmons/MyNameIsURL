@@ -41,7 +41,7 @@ case insecureAdminPattern:
 ```
 
 ## Installation
-### Swift Package Manager <a href="https://swift.org/package-manager" style='background-position: center right;background-repeat: no-repeat;background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 12 12%22 width=%2218%22 height=%2218%22%3E%3Cpath fill=%22#fff%22 stroke=%22#36c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22#36c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E%3Cpath fill=%22#fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E%3C/svg%3E");padding-right: 18px;'></a>
+### Swift Package Manager <a href="https://swift.org/package-manager">ⓘ</a>
 
 #### Using Xcode 11
 Xcode 11 [natively supports Swift Packages](https://developer.apple.com/videos/play/wwdc2019/408/). To add `MyNameIsURL` as a dependency:
@@ -62,7 +62,7 @@ dependencies: [
 ]
 ```
 
-### Carthage <a href="https://github.com/Carthage/Carthage" style='background-position: center right;background-repeat: no-repeat;background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 12 12%22 width=%2218%22 height=%2218%22%3E%3Cpath fill=%22#fff%22 stroke=%22#36c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22#36c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E%3Cpath fill=%22#fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E%3C/svg%3E");padding-right: 18px;'></a>
+### Carthage <a href="https://github.com/Carthage/Carthage">ⓘ</a>
 Ought to work. Try putting this in your `Cartfile`:
 
 ```
@@ -100,13 +100,12 @@ try! HostSuffix([Domain(name: "example"), Domain(name: "com")]).matches(url: url
 //> true
 ```
 
-<div style="border-left: 4px solid #fcc; padding-left:1em; margin-top: 1em">
-Given `URL.host` is a string, and the `Host` type wraps a string, why does `HostSuffix` wrap an collection of domains? Because matching a host suffix by string is a common security issue.
-   
-Consider the URL “www.example.com”. We may wish to match only the “example.com” part so we naïvely create a value like `HostSuffix("example.com")`. This looks straight-forward, but also matches “hijackexample.com”. Even if we catch this and use the (easy to overlook) `HostSuffix(".example.com")` we now have a situation where “example.com” doesn’t match because it has no leading `"."`.
-   
-Requiring an array of domains not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `HostSuffix(["example", "com"])` matches both “www.example.com” and “example.com” but *does not* match “hijackexample.com”.
-</div>
+> Given `URL.host` is a string, and the `Host` type wraps a string, why does `HostSuffix` wrap an collection of domains? Because matching a host suffix by string is a common security issue.
+>    
+> Consider the URL “www.example.com”. We may wish to match only the “example.com” part so we naïvely create a value like `HostSuffix("example.com")`. This looks straight-forward, but also matches “hijackexample.com”. Even if we catch this and use the (easy to overlook) `HostSuffix(".example.com")` we now have a situation where “example.com” doesn’t match because it has no leading `"."`.
+>    
+> Requiring an array of domains not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `HostSuffix(["example", "com"])` matches both “www.example.com” and “example.com” but *does not* match “hijackexample.com”.
+
 
 ### Path
 Wraps a string to later match against a URL’s `path` property.
@@ -118,23 +117,19 @@ Path("/foo/bar").matches(url: url) //> true
 Path("/foo").matches(url: url)     //> false
 ```
 
-<div style="border-left: 4px solid #FFF1B9; padding-left:1em; margin-top: 1em">
-Note `URL` *always* drops the trailing `"/"` in paths. So a `Path` initialized with a trailing `"/"` will never match:
 
-```swift
-let url = URL(string: "http://example.com/foo/")!
-
-Path("/foo").matches(url: url)  //> true
-Path("/foo/").matches(url: url) //> false
-```
-</div>
+> Note `URL` *always* drops the trailing `"/"` in paths. So a `Path` initialized with a trailing `"/"` will never match: 
+> ```swift
+> let url = URL(string: "http://example.com/foo/")!
+> 
+> Path("/foo").matches(url: url)  //> true
+> Path("/foo/").matches(url: url) //> false
+> ```
 
 ### PathPrefix
 Wraps an array of path components to later be matched against prefixes of `URL`’s `pathComponents`.
 
-<div style="border-left: 4px solid #FFF1B9; padding-left:1em; margin-top: 1em; margin-bottom: 1em;">
 In the common case of matching against an absolute `URL`, don’t forget the first element of `pathComponents` is a `"/"`.
-</div>
 
 ```swift
 let url = URL(string: "http://example.com/foo/bar")
@@ -144,13 +139,11 @@ PathPrefix(["/", "foo"]).matches(url: URL)        //> true
 PathPrefix(["/"]).matches(url: URL)               //> true
 ```
 
-<div style="border-left: 4px solid #fcc; padding-left:1em; margin-top: 1em">
-Given the `Path` type matches against `URL.path` why does `PathPrefix` wrap an array and match against `URL.pathComponents`? Because matching a partial path is a common source of bugs.
-
-Consider the URL “example.com/post/edit”. We may wish to match only the “/post” part so we naïvely create a value like `PostPrefix("/post")`. This looks straight-forward, but also matches “example.com/poster/edit”, which is probably not intended.
-
-Requiring an array of path components not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `PathPrefix(["/", "post"])` matches both “example.com/post/edit” and “example.com/post” but *does not* match “example.com/poster”.
-</div>
+> Given the `Path` type matches against `URL.path` why does `PathPrefix` wrap an array and match against `URL.pathComponents`? Because matching a partial path is a common source of bugs.
+> 
+> Consider the URL “example.com/post/edit”. We may wish to match only the “/post” part so we naïvely create a value like `PostPrefix("/post")`. This looks straight-forward, but also matches “example.com/poster/edit”, which is probably not intended.
+> 
+> Requiring an array of path components not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `PathPrefix(["/", "post"])` matches both “example.com/post/edit” and “example.com/post” but *does not* match “example.com/poster”.
 
 ### Scheme
 The `Scheme` type is primarily for representing validated URL schemes (the part before the “:”). It also defines many convenience constants for well-known schemes.
