@@ -83,7 +83,7 @@ Host("com").matches(url: url)         //> false
 ```
 
 ### HostSuffix
-Wraps an array of domain names to later match against the suffix of a URL’s `host`, split into domains.
+Wraps an array of domain names to later match against some suffix of a URL’s `host`, split into domains.
 
 ```swift
 let url = URL(string: "http://www.example.com")!
@@ -127,7 +127,7 @@ Path("/foo").matches(url: url)     //> false
 > ```
 
 ### PathPrefix
-Wraps an array of path components to later be matched against prefixes of `URL`’s `pathComponents`.
+Wraps an array of path components to later be matched against some prefix of `URL`’s `pathComponents`.
 
 In the common case of matching against an absolute `URL`, don’t forget the first element of `pathComponents` is a `"/"`.
 
