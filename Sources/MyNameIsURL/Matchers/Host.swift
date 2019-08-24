@@ -15,6 +15,14 @@ import Foundation
  - SeeAlso: `HostSuffix`
 */
 public struct Host: URLMatchable {
+  private struct Missing: URLMatchable {
+    public func matches(url: URL) -> Bool {
+      return url.host == nil
+    }
+  }
+  
+
+  public static let missing: URLMatchable = Missing()
   private let host: String
   /**
    Wraps the given string to create a new `Host` value. It matches `URL`s based on their `host` property.

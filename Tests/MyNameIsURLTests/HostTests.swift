@@ -11,6 +11,7 @@ class HostTests: XCTestCase {
   
   
   func testNil() {
+    XCTAssert(Host.missing.matches(url: Factory.nilURL))
     XCTAssertFalse(Factory.Host.success.matches(url: Factory.nilURL))
   }
 

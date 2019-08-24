@@ -123,6 +123,7 @@ class SchemeTests: XCTestCase {
     }
     XCTAssert(Factory.Scheme.success.matches(url: Factory.url))
     XCTAssertFalse(Factory.Scheme.success.matches(url: Factory.nilURL))
+    XCTAssert(Scheme.missing.matches(url: Factory.nilURL))
   }
 }
 

@@ -10,7 +10,8 @@ class PathTests: XCTestCase {
   }
   
   
-  func testNoNilMatches() {
+  func testNilMatches() {
+    XCTAssert(Path.missing.matches(url: Factory.nilURL))
     XCTAssertFalse(Factory.Path.success.matches(url: Factory.nilURL))
   }
   

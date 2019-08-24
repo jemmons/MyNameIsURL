@@ -15,6 +15,14 @@ import Foundation
  - SeeAlso: `PathPrefix`
  */
 public struct Path: URLMatchable {
+  private struct Missing: URLMatchable {
+    func matches(url: URL) -> Bool {
+      return url.path == ""
+    }
+  }
+  
+  
+  public static let missing: URLMatchable = Missing()
   private let path: String
   /**
    Wraps the given string to create a new `Path` value. It matches `URL`s based on their `path` property.
