@@ -8,14 +8,14 @@ import Foundation
  Usage:
  ```
  let url = URL(string: "http://example.com/foo/bar")!
- Path(["/", "foo", "bar"]).matches(url) //> true
- Path(["/", "foo"]).matches(url)        //> true
+ PathPrefix(["/", "foo", "bar"]).matches(url) //> true
+ PathPrefix(["/", "foo"]).matches(url)        //> true
  ```
  
  - SeeAlso: `Path`
  */
 public struct PathPrefix: URLMatchable {
-  private let pathComponents: [String]
+  private let pathComponents: [PathComponent]
 
 
   /**
@@ -33,7 +33,7 @@ public struct PathPrefix: URLMatchable {
    
      In the common case of matching against an absolute `URL`, don’t forget the first element of path components must be a `"/"`.
    */
-  public init(_ pathComponents: [String]) {
+  public init(_ pathComponents: [PathComponent]) {
     self.pathComponents = pathComponents
   }
 
@@ -46,6 +46,17 @@ public struct PathPrefix: URLMatchable {
    */
   public func matches(url: URL) -> Bool {
     let pathPrefix = url.pathComponents.prefix(pathComponents.count)
-    return pathComponents == Array(pathPrefix)
+    guard pathPrefix.count == pathComponents.count else {
+      return false
+    }
+    
+    return zip(pathPrefix, pathComponents).allSatisfy { prefix, component in
+      switch component {
+      case .name(let name):
+        return prefix == name
+      case .wildcard:
+        return true
+      }
+    }
   }
 }

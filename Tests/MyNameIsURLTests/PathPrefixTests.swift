@@ -26,4 +26,26 @@ class PathPrefixTests: XCTestCase {
     }
     wait(for: [ran], timeout: 0)
   }
+  
+  
+  func testWildcardSuccess() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.PathPrefix.Wildcard.succeeding.forEach {
+      XCTAssert($0.matches(url: Factory.PathPrefix.Wildcard.url))
+      ran.fulfill()
+    }
+    wait(for: [ran], timeout: 0)
+  }
+  
+  
+  func testWildcardFailure() {
+    let ran = expectation(description: "Loop ran.")
+    ran.assertForOverFulfill = false
+    Factory.PathPrefix.Wildcard.failing.forEach {
+      XCTAssertFalse($0.matches(url: Factory.PathPrefix.Wildcard.url))
+      ran.fulfill()
+    }
+    wait(for: [ran], timeout: 0)
+  }
 }
