@@ -8,8 +8,9 @@ import Foundation
  Usage:
  ```
  let url = URL(string: "http://example.com/foo/bar")!
- PathPrefix(["/", "foo", "bar"]).matches(url) //> true
- PathPrefix(["/", "foo"]).matches(url)        //> true
+ PathPrefix(["/", "foo", "bar"]).matches(url)     //> true
+ PathPrefix(["/", .wildcard, "bar"]).matches(url) //> true
+ PathPrefix(["/", "foo"]).matches(url)            //> true
  ```
  
  - SeeAlso: `Path`
@@ -19,7 +20,7 @@ public struct PathPrefix: URLMatchable {
 
 
   /**
-   Wraps the given components to create a new `PathPrefix` value. It matches against prefixes of a `URL`’s `pathComponents` property.
+   Wraps the given `PathComponent`s to create a new `PathPrefix` value. It matches against prefixes of a `URL`’s `pathComponents` property.
 
    Given the `Path` type matches against `URL.path` why does `PathPrefix` wrap an array and match against `URL.pathComponetns`? Because matching a partial path is a common source of bugs.
    
@@ -27,7 +28,7 @@ public struct PathPrefix: URLMatchable {
    
    Requiring an array of path components not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `PathPrefix(["/", "foo"])` matches both “example.com/foo/bar” and “example.com/foo” but *does not* match “example.com/foox”.
    
-   - SeeAlso: `Path`
+   - SeeAlso: `Path`, `PathPrefix.PathComponent`
    
    - Parameter components: The prefix of the path components to match.
    

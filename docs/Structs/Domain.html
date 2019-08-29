@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Domain Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Domain" class="dashAnchor"></a>
+    <a title="Domain Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MyNameIsURL  Docs</a> (97% documented)</p>
+        <p class="header-right"><a href="https://github.com/jemmons/MyNameIsURL"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fjemmons%2Egithub%2Eio%2FMyNameIsURL%2Fdocsets%2FMyNameIsURL%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MyNameIsURL Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Domain Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11MyNameIsURL2teoiySbAA12URLMatchable_p_10Foundation0D0VtF">~=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/URLMatchable.html">URLMatchable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/And.html">And</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain.html">Domain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Host.html">Host</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HostSuffix.html">HostSuffix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Not.html">Not</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Or.html">Or</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Password.html">Password</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Path.html">Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix.html">PathPrefix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix/PathComponent.html">– PathComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Port.html">Port</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme.html">Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Domain</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Domain</span></code></pre>
+
+                </div>
+              </div>
+            <p>Type that wraps a validated domain name (as per RFCs <a href="https://tools.ietf.org/html/rfc952">952</a> and <a href="https://tools.ietf.org/html/rfc1123">1123</a>)</p>
+
+<p>The <code>name</code> of a <code>Domain</code> value should be considered safe for use in contexts which require a valid domain name, as any invalid domain formulations would be rejected by the contructor.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL6DomainV6FormatO"></a>
+                    <a name="//apple_ref/swift/Enum/Format" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL6DomainV6FormatO">Format</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Domain formatting error.</p>
+
+                        <a href="../Structs/Domain/Format.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Format</span> <span class="p">:</span> <span class="kt">LocalizedError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL6DomainV4SizeO"></a>
+                    <a name="//apple_ref/swift/Enum/Size" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL6DomainV4SizeO">Size</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Domain size error.</p>
+
+                        <a href="../Structs/Domain/Size.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Size</span> <span class="p">:</span> <span class="kt">LocalizedError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL6DomainV4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL6DomainV4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The validated domain name (as a <code>String</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL6DomainV4nameACSS_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL6DomainV4nameACSS_tKcfc">init(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new <code>Domain</code> value which wraps a validated domain name.</p>
+
+<p>And invalid <code><a href="../Structs/Domain.html#/s:11MyNameIsURL6DomainV4nameSSvp">name</a></code> causes the constructor to <code>throw</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The validity of the given <code><a href="../Structs/Domain.html#/s:11MyNameIsURL6DomainV4nameSSvp">name</a></code> is judged by RFCs <a href="https://tools.ietf.org/html/rfc952">952</a> and <a href="https://tools.ietf.org/html/rfc1123">RFC-1123</a> which state, in part:
+
+</div>
+
+<p>“A ‘name’ (Net, Host, Gateway, or Domain name) is a text string … drawn from the alphabet (A-Z), digits (0-9), minus sign (-) … The first character must be an alpha character. The last character must not be a minus sign.”</p>
+
+<p>and</p>
+
+<p>“The restriction on the first character is relaxed to allow either a letter or a digit. Host software &hellip; SHOULD handle host names of up to 255 characters.”</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code>Domain.Format.invalid(String)</code> if the given <code><a href="../Structs/Domain.html#/s:11MyNameIsURL6DomainV4nameSSvp">name</a></code> is an invalid domain.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The domain name to be wrapped (if validated).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL6DomainV2eeoiySbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL6DomainV2eeoiySbAC_ACtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defines whether two <code>Domains</code> are equal based on their <code><a href="../Structs/Domain.html#/s:11MyNameIsURL6DomainV4nameSSvp">name</a></code> properties.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    RFC 952 states “No distinction is made between upper and lower case.” And so the <code><a href="../Structs/Domain.html#/s:11MyNameIsURL6DomainV4nameSSvp">name</a></code>s’ equality is determined with a case-insensitive compare.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Domain</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Domain</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://figure.ink" target="_blank" rel="external">Joshua Emmons</a>. All rights reserved. (Last updated: 2019-08-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

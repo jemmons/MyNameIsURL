@@ -1,0 +1,6 @@
+clean: true
+author: Joshua Emmons
+author_url: https://figure.ink
+github_url: https://github.com/jemmons/MyNameIsURL
+root_url: https://jemmons.github.io/MyNameIsURL/
+module: MyNameIsURL

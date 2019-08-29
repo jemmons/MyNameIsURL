@@ -1,11 +1,12 @@
 # MyNameIsURL
+[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-success)](https://github.com/Apple/swift-package-manager) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-success)](https://github.com/Carthage/Carthage) [![Documentation](https://jemmons.github.io/MyNameIsURL/badge.svg)](https://jemmons.github.io/MyNameIsURL/)
 
 A package for matching URLs in Swift.
 
 ## Table of Contents
 * [About](#about)
 * [Installation](#installation)
-* [Usage](#usage)
+* [API](#api)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -70,133 +71,8 @@ github "jemmons/MyNameIsURL" ~> 0.3.0
 ```
 
 
-## Usage
-### Host
-Wraps a string to later match against a URL’s `host` property.
-
-```swift
-let url = URL(string: "http://example.com")!
-
-Host("example.com").matches(url: url) //> true
-Host("example").matches(url: url)     //> false
-Host("com").matches(url: url)         //> false
-```
-
-### HostSuffix
-Wraps an array of domain names to later match against some suffix of a URL’s `host`, split into domains.
-
-```swift
-let url = URL(string: "http://www.example.com")!
-
-HostSuffix(["com"]).matches(url: url)            //> true
-HostSuffix(["example", "com"]).matches(url: url) //> true
-HostSuffix(["example"]).matches(url: url)        //> false
-```
-
-If validity is required of domain names, the `Domain` type can be used in place of `String`. It will `throw` on invalid input:
-
-```swift
-try! HostSuffix([Domain(name: "example"), Domain(name: "com")]).matches(url: url) 
-//> true
-```
-
-> Given `URL.host` is a string, and the `Host` type wraps a string, why does `HostSuffix` wrap an collection of domains? Because matching a host suffix by string is a common security issue.
->    
-> Consider the URL “www.example.com”. We may wish to match only the “example.com” part so we naïvely create a value like `HostSuffix("example.com")`. This looks straight-forward, but also matches “hijackexample.com”. Even if we catch this and use the (easy to overlook) `HostSuffix(".example.com")` we now have a situation where “example.com” doesn’t match because it has no leading `"."`.
->    
-> Requiring an array of domains not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `HostSuffix(["example", "com"])` matches both “www.example.com” and “example.com” but *does not* match “hijackexample.com”.
-
-
-### Path
-Wraps a string to later match against a URL’s `path` property.
-
-```swift
-let url = URL(string: "http://example.com/foo/bar")!
-
-Path("/foo/bar").matches(url: url) //> true
-Path("/foo").matches(url: url)     //> false
-```
-
-
-> Note `URL` *always* drops the trailing `"/"` in paths. So a `Path` initialized with a trailing `"/"` will never match: 
-> ```swift
-> let url = URL(string: "http://example.com/foo/")!
-> 
-> Path("/foo").matches(url: url)  //> true
-> Path("/foo/").matches(url: url) //> false
-> ```
-
-### PathPrefix
-Wraps an array of path components to later be matched against some prefix of `URL`’s `pathComponents`.
-
-In the common case of matching against an absolute `URL`, don’t forget the first element of `pathComponents` is a `"/"`.
-
-```swift
-let url = URL(string: "http://example.com/foo/bar")
-
-PathPrefix(["/", "foo", "bar"]).matches(url: URL) //> true
-PathPrefix(["/", "foo"]).matches(url: URL)        //> true
-PathPrefix(["/"]).matches(url: URL)               //> true
-```
-
-> Given the `Path` type matches against `URL.path` why does `PathPrefix` wrap an array and match against `URL.pathComponents`? Because matching a partial path is a common source of bugs.
-> 
-> Consider the URL “example.com/post/edit”. We may wish to match only the “/post” part so we naïvely create a value like `PostPrefix("/post")`. This looks straight-forward, but also matches “example.com/poster/edit”, which is probably not intended.
-> 
-> Requiring an array of path components not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — `PathPrefix(["/", "post"])` matches both “example.com/post/edit” and “example.com/post” but *does not* match “example.com/poster”.
-
-### Scheme
-The `Scheme` type is primarily for representing validated URL schemes (the part before the “:”). It also defines many convenience constants for well-known schemes.
-
-This being a URL matching package, though, it’s also extended to match URLs:
-
-```swift
-let url = URL(string: "https://example.com")!
-Scheme.https.matches(url: url) //> true
-```
-
-
-### And
-Type that wraps a collection of other matchers, logically ANDing them together when matching a URL.
-
-```swift
-let pattern = And(
-  Scheme.https,
-  HostSuffix(["example", "com"]),
-  PathPrefix(["/", "foo"])
-)
-
-pattern.matches(url: URL(string: "https://example.com/foo/bar")!)  // true
-pattern.matches(url: URL(string: "https://example.net/foo/bar")!)  // false
-pattern.matches(url: URL(string: "https://example.com/fuzz/bar")!) // false
-```
-
-### Or
-Type that wraps a collection of other matchers, logically ORing them together when matching a URL.
-
-```swift
-let pattern = Or(
-  Scheme.https,
-  HostSuffix(["example", "com"]),
-  PathPrefix(["/", "foo"])
-)
-
-pattern.matches(url: URL(string: "https://example.com/foo/bar")!) // true
-pattern.matches(url: URL(string: "sms://example.net/foo/bar")!)   // true
-pattern.matches(url: URL(string: "ftp://example.com/fuzz/bar")!)  // true
-```
-
-### Not
-Type that negates the matcher it wraps.
-
-```swift
-let url = URL(string: "http://example.com")!
-
-Not(Path("example.com")).matches(url: url) //> false
-Not(Path("foo.test")).matches(url: url)    //> true
-Not(Scheme.http).matches(url: url)         //> false
-Not(Scheme.mailto).matches(url: url)       //> true
-```
+## API
+Full API documentation [can be found here](https://jemmons.github.io/MyNameIsURL/).
 
 ## Contributing
 [Pull requests](https://github.com/jemmons/MyNameIsURL/pulls) are welcome! Please keep in mind this is a weekend project, though, so reviews times measured in “*n* of weeks” is to be expected.

@@ -1,0 +1,19 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/jemmons/code/mcmxcix/MyNameIsURL/Sources/MyNameIsURL/Extensions/URL+Scheme.swift",
+      "line": 6,
+      "symbol": "URL.replacing(scheme:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jemmons/code/mcmxcix/MyNameIsURL/Sources/MyNameIsURL/Matchers/Scheme+URLMatchable.swift",
+      "line": 9,
+      "symbol": "Scheme.missing",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/jemmons/code/mcmxcix/MyNameIsURL"
+}

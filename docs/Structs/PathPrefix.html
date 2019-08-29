@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PathPrefix Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/PathPrefix" class="dashAnchor"></a>
+    <a title="PathPrefix Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MyNameIsURL  Docs</a> (97% documented)</p>
+        <p class="header-right"><a href="https://github.com/jemmons/MyNameIsURL"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fjemmons%2Egithub%2Eio%2FMyNameIsURL%2Fdocsets%2FMyNameIsURL%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MyNameIsURL Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PathPrefix Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11MyNameIsURL2teoiySbAA12URLMatchable_p_10Foundation0D0VtF">~=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/URLMatchable.html">URLMatchable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/And.html">And</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain.html">Domain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Host.html">Host</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HostSuffix.html">HostSuffix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Not.html">Not</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Or.html">Or</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Password.html">Password</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Path.html">Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix.html">PathPrefix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix/PathComponent.html">– PathComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Port.html">Port</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme.html">Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PathPrefix</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PathPrefix</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/URLMatchable.html">URLMatchable</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Type that matches a <code>URL</code> based on the prefix of the <code>URL</code>’s <code>pathComponents</code> property.</p>
+
+<p>Usage:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"http://example.com/foo/bar"</span><span class="p">)</span><span class="o">!</span>
+<span class="kt">PathPrefix</span><span class="p">([</span><span class="s">"/"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">])</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>     <span class="c1">//&gt; true</span>
+<span class="kt">PathPrefix</span><span class="p">([</span><span class="s">"/"</span><span class="p">,</span> <span class="o">.</span><span class="n">wildcard</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">])</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1">//&gt; true</span>
+<span class="kt">PathPrefix</span><span class="p">([</span><span class="s">"/"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">])</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>            <span class="c1">//&gt; true</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../Structs/Path.html">Path</a></code>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL10PathPrefixVyACSayAC0E9ComponentOGcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL10PathPrefixVyACSayAC0E9ComponentOGcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wraps the given <code><a href="../Structs/PathPrefix/PathComponent.html">PathComponent</a></code>s to create a new <code>PathPrefix</code> value. It matches against prefixes of a <code>URL</code>’s <code>pathComponents</code> property.</p>
+
+<p>Given the <code><a href="../Structs/Path.html">Path</a></code> type matches against <code>URL.path</code> why does <code>PathPrefix</code> wrap an array and match against <code>URL.pathComponetns</code>? Because matching a partial path is a common source of bugs.</p>
+
+<p>Consider the URL “example.com/foo/bar”. We may wish to match only the “/foo” part so we naïvely create a value like <code>PostPrefix(&quot;/foo&quot;)</code>. This looks straight-forward, but also matches “example.com/foox”. Even if we catch this and use the (easy to overlook) <code>PostPrefix(&quot;/foo/&quot;)</code> we now have a situation where “example.com/foo” doesn’t match because lacks the trailing <code>&quot;/&quot;</code>.</p>
+
+<p>Requiring an array of path components not only forces us to think through these issues but also has the virtuous property of making the naïve solution the correct one — <code>PathPrefix([&quot;/&quot;, &quot;foo&quot;])</code> matches both “example.com/foo/bar” and “example.com/foo” but <em>does not</em> match “example.com/foox”.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code><a href="../Structs/Path.html">Path</a></code>, <code><a href="../Structs/PathPrefix/PathComponent.html">PathPrefix.PathComponent</a></code></p>
+
+</div>
+
+<p>In the common case of matching against an absolute <code>URL</code>, don’t forget the first element of path components must be a <code>&quot;/&quot;</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">pathComponents</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/PathPrefix/PathComponent.html">PathComponent</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>components</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The prefix of the path components to match.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL10PathPrefixV7matches3urlSb10Foundation0D0V_tF"></a>
+                    <a name="//apple_ref/swift/Method/matches(url:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL10PathPrefixV7matches3urlSb10Foundation0D0V_tF">matches(url:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Predicate that determines whether a <code>PathPrefix</code> matches a given <code>URL</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">matches</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>URL</code> to be matched.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the wrapped path components are a prefix of <code>url.pathComponents</code>. Otherwise, <code>false</code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL10PathPrefixV0E9ComponentO"></a>
+                    <a name="//apple_ref/swift/Enum/PathComponent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL10PathPrefixV0E9ComponentO">PathComponent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Represents a path component for use in creating a <code><a href="../Structs/PathPrefix.html">PathPrefix</a></code>. A path component can be either a <code>name</code> (which is matched for equality with the strings of a <code>URL</code>’s <code>pathComponents</code>) or a <code>wildcard</code> (which matches any non-nil value):</p>
+<pre class="highlight swift"><code><span class="kt">PathPrefix</span><span class="p">([</span><span class="o">.</span><span class="nf">name</span><span class="p">(</span><span class="s">"/"</span><span class="p">),</span> <span class="o">.</span><span class="n">wildcard</span><span class="p">,</span> <span class="o">.</span><span class="nf">name</span><span class="p">(</span><span class="s">"bar"</span><span class="p">)])</span>
+</code></pre>
+
+<p>To reduce noise, <code>PathComponent</code> conforms to <code>ExpressibleByStringLiteral</code>. So the above can be more simply expressed as:</p>
+<pre class="highlight swift"><code><span class="kt">PathPrefix</span><span class="p">([</span><span class="s">"/"</span><span class="p">,</span> <span class="o">.</span><span class="n">wildcard</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">])</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../Structs/PathPrefix.html">PathPrefix</a></code>
+
+</div>
+
+                        <a href="../Structs/PathPrefix/PathComponent.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">PathComponent</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://figure.ink" target="_blank" rel="external">Joshua Emmons</a>. All rights reserved. (Last updated: 2019-08-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

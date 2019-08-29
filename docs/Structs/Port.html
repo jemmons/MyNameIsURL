@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Port Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Port" class="dashAnchor"></a>
+    <a title="Port Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MyNameIsURL  Docs</a> (97% documented)</p>
+        <p class="header-right"><a href="https://github.com/jemmons/MyNameIsURL"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fjemmons%2Egithub%2Eio%2FMyNameIsURL%2Fdocsets%2FMyNameIsURL%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MyNameIsURL Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Port Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11MyNameIsURL2teoiySbAA12URLMatchable_p_10Foundation0D0VtF">~=(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/URLMatchable.html">URLMatchable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/And.html">And</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain.html">Domain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Domain/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Host.html">Host</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HostSuffix.html">HostSuffix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Not.html">Not</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Or.html">Or</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Password.html">Password</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Path.html">Path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix.html">PathPrefix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PathPrefix/PathComponent.html">– PathComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Port.html">Port</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme.html">Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Format.html">– Format</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Scheme/Size.html">– Size</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Port</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Port</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/URLMatchable.html">URLMatchable</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Type that matches a <code>URL</code> based on comparison with the <code>URL</code>’s <code>port</code> propery.</p>
+
+<p>Usage:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://example.com:8080"</span><span class="p">)</span><span class="o">!</span>
+<span class="kt">Port</span><span class="p">(</span><span class="mi">8080</span><span class="p">)</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1">//&gt; true</span>
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL4PortV7missingAA12URLMatchable_pvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/missing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL4PortV7missingAA12URLMatchable_pvpZ">missing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A value that matches a <code>URL</code> with a <code>port</code> property of <code>nil</code>.</p>
+
+<p>Usage:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">port</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"http://example.com:8080"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">noPort</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"http://example.com"</span><span class="p">)</span><span class="o">!</span>
+<span class="kt">Port</span><span class="o">.</span><span class="n">missing</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">port</span><span class="p">)</span>   <span class="c1">//&gt; false</span>
+<span class="kt">Port</span><span class="o">.</span><span class="n">missing</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">noPort</span><span class="p">)</span> <span class="c1">//&gt; true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">missing</span><span class="p">:</span> <span class="kt"><a href="../Protocols/URLMatchable.html">URLMatchable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL4PortVyACSicfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL4PortVyACSicfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wraps the given number to create a new <code>Port</code> value. It matches <code>URL</code>s based on their <code>port</code> property.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>port</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The port number to match. It will be compared for equality against <code>URL</code>’s <code>port</code> property.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11MyNameIsURL4PortV7matches3urlSb10Foundation0D0V_tF"></a>
+                    <a name="//apple_ref/swift/Method/matches(url:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11MyNameIsURL4PortV7matches3urlSb10Foundation0D0V_tF">matches(url:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Predicate that determines whether a <code>Port</code> matches a given <code>URL</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">matches</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>URL</code> to be matched.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the wrapped port number is equivalent to <code>url.port</code>. Otherwise, <code>false</code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://figure.ink" target="_blank" rel="external">Joshua Emmons</a>. All rights reserved. (Last updated: 2019-08-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
