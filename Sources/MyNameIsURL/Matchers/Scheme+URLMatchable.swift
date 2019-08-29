@@ -6,7 +6,7 @@ import Foundation
  Extends `Scheme` to match the `scheme` a URL.
  */
 extension Scheme: URLMatchable {
-  public static var missing: URLMatchable { Missing() }
+  public static var missing: URLMatchable { return Missing() }
 
 
   /**
