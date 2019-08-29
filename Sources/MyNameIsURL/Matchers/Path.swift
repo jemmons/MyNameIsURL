@@ -15,7 +15,32 @@ import Foundation
  - SeeAlso: `PathPrefix`
  */
 public struct Path: URLMatchable {
+  private struct Missing: URLMatchable {
+    func matches(url: URL) -> Bool {
+      return url.path == ""
+    }
+  }
+  
+  
+  /**
+   A value that matches a `URL` whose `path` property is an empty string (`""`).
+   
+   Usage:
+   ```
+   let path = URL(string: "http://example.com/foo")!
+   let slash = URL(string: "http://example.com/")!
+   let noPath = URL(string: "http://exmaple.com")!
+   Path.missing.matches(url: path)   //> false
+   Path.missing.matches(url: slash)  //> false
+   Path.missing.matches(url: noPath) //> true
+   ```
+   */
+  public static let missing: URLMatchable = Missing()
+  
+  
   private let path: String
+  
+  
   /**
    Wraps the given string to create a new `Path` value. It matches `URL`s based on their `path` property.
    

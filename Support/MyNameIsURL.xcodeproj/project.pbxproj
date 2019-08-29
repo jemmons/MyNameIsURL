@@ -51,6 +51,15 @@
 		C12354CF22D90855007EC78D /* URLSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12354CE22D90855007EC78D /* URLSchemeTests.swift */; };
 		C190154722E2253F00FADA9D /* Scheme+URLMatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */; };
 		C190154922E2342C00FADA9D /* String+HostComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C190154822E2342C00FADA9D /* String+HostComponents.swift */; };
+		C19DE70123106F8B00782334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DE70023106F8B00782334 /* User.swift */; };
+		C19DE7032310727C00782334 /* Factory+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DE7022310727C00782334 /* Factory+User.swift */; };
+		C19DE70523107AA400782334 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DE70423107AA400782334 /* UserTests.swift */; };
+		C1A0E64823109DF600339C86 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0E64723109DF600339C86 /* Password.swift */; };
+		C1A0E64A23109EA500339C86 /* Factory+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0E64923109EA500339C86 /* Factory+Password.swift */; };
+		C1A0E64C23109F7600339C86 /* PasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0E64B23109F7600339C86 /* PasswordTests.swift */; };
+		C1AE2755230DA84B0099C39C /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE2754230DA84B0099C39C /* Port.swift */; };
+		C1AE2757230DA9E10099C39C /* PortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE2756230DA9E10099C39C /* PortTests.swift */; };
+		C1AE2759230DAA310099C39C /* Factory+Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE2758230DAA310099C39C /* Factory+Port.swift */; };
 		OBJ_21 /* URLMatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* URLMatchable.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* MyNameIsURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */; };
@@ -104,6 +113,15 @@
 		C12354CE22D90855007EC78D /* URLSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeTests.swift; sourceTree = "<group>"; };
 		C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scheme+URLMatchable.swift"; sourceTree = "<group>"; };
 		C190154822E2342C00FADA9D /* String+HostComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HostComponents.swift"; sourceTree = "<group>"; };
+		C19DE70023106F8B00782334 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C19DE7022310727C00782334 /* Factory+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+User.swift"; sourceTree = "<group>"; };
+		C19DE70423107AA400782334 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		C1A0E64723109DF600339C86 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		C1A0E64923109EA500339C86 /* Factory+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Password.swift"; sourceTree = "<group>"; };
+		C1A0E64B23109F7600339C86 /* PasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTests.swift; sourceTree = "<group>"; };
+		C1AE2754230DA84B0099C39C /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
+		C1AE2756230DA9E10099C39C /* PortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortTests.swift; sourceTree = "<group>"; };
+		C1AE2758230DAA310099C39C /* Factory+Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Port.swift"; sourceTree = "<group>"; };
 		"MyNameIsURL::MyNameIsURL::Product" /* MyNameIsURL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyNameIsURL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MyNameIsURL::MyNameIsURLTests::Product" /* MyNameIsURLTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyNameIsURLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -146,7 +164,10 @@
 				C110EC2822CD1268007FF845 /* HostSuffix.swift */,
 				C110EC2A22CD1371007FF845 /* Path.swift */,
 				C110EC2D22CD13C8007FF845 /* PathPrefix.swift */,
+				C1AE2754230DA84B0099C39C /* Port.swift */,
 				C190154622E2253F00FADA9D /* Scheme+URLMatchable.swift */,
+				C19DE70023106F8B00782334 /* User.swift */,
+				C1A0E64723109DF600339C86 /* Password.swift */,
 				C110EC2F22CD141D007FF845 /* And.swift */,
 				C110EC3122CD1476007FF845 /* Or.swift */,
 				C110EC3322CD149E007FF845 /* Not.swift */,
@@ -173,6 +194,9 @@
 				C110EC3C22CD3860007FF845 /* Factory+Path.swift */,
 				C110EC5422CFAB03007FF845 /* Factory+PathPrefix.swift */,
 				C110EC4022CD9A43007FF845 /* Factory+Scheme.swift */,
+				C1AE2758230DAA310099C39C /* Factory+Port.swift */,
+				C19DE7022310727C00782334 /* Factory+User.swift */,
+				C1A0E64923109EA500339C86 /* Factory+Password.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -200,6 +224,9 @@
 				C110EC4C22CE312D007FF845 /* NotTests.swift */,
 				C110EC5622CFAE8F007FF845 /* PatternOperatorTests.swift */,
 				C12354CE22D90855007EC78D /* URLSchemeTests.swift */,
+				C1AE2756230DA9E10099C39C /* PortTests.swift */,
+				C19DE70423107AA400782334 /* UserTests.swift */,
+				C1A0E64B23109F7600339C86 /* PasswordTests.swift */,
 			);
 			name = MyNameIsURLTests;
 			path = Tests/MyNameIsURLTests;
@@ -334,10 +361,13 @@
 				C110EC3422CD149E007FF845 /* Not.swift in Sources */,
 				C110EC2B22CD1371007FF845 /* Path.swift in Sources */,
 				C110EC4522CD9BC4007FF845 /* Scheme.swift in Sources */,
+				C1AE2755230DA84B0099C39C /* Port.swift in Sources */,
 				C110EC3022CD141D007FF845 /* And.swift in Sources */,
+				C19DE70123106F8B00782334 /* User.swift in Sources */,
 				C110EC2922CD1268007FF845 /* HostSuffix.swift in Sources */,
 				C110EC2E22CD13C8007FF845 /* PathPrefix.swift in Sources */,
 				C190154722E2253F00FADA9D /* Scheme+URLMatchable.swift in Sources */,
+				C1A0E64823109DF600339C86 /* Password.swift in Sources */,
 				C110EC1B22CD08D6007FF845 /* Domain.swift in Sources */,
 				C110EC2422CD0D05007FF845 /* Host.swift in Sources */,
 				C110EC3222CD1476007FF845 /* Or.swift in Sources */,
@@ -366,14 +396,20 @@
 				C110EC4722CD9C81007FF845 /* AndTests.swift in Sources */,
 				C110EC3622CD1558007FF845 /* HostTests.swift in Sources */,
 				C110EC5122CF9725007FF845 /* HostSuffixTests.swift in Sources */,
+				C1A0E64A23109EA500339C86 /* Factory+Password.swift in Sources */,
 				C110EC4D22CE312D007FF845 /* NotTests.swift in Sources */,
+				C1A0E64C23109F7600339C86 /* PasswordTests.swift in Sources */,
 				C110EC4B22CE3018007FF845 /* OrTests.swift in Sources */,
 				C110EC5722CFAE8F007FF845 /* PatternOperatorTests.swift in Sources */,
 				C110EC4322CD9B3B007FF845 /* SchemeTests.swift in Sources */,
 				C110EC3B22CD37CE007FF845 /* Factory+Host.swift in Sources */,
 				C110EC3D22CD3860007FF845 /* Factory+Path.swift in Sources */,
+				C19DE70523107AA400782334 /* UserTests.swift in Sources */,
+				C1AE2757230DA9E10099C39C /* PortTests.swift in Sources */,
+				C1AE2759230DAA310099C39C /* Factory+Port.swift in Sources */,
 				C110EC3922CD3142007FF845 /* Factory.swift in Sources */,
 				C110EC4922CE2ED9007FF845 /* Factory+DomainName.swift in Sources */,
+				C19DE7032310727C00782334 /* Factory+User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

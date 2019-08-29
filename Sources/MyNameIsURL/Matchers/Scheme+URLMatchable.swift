@@ -6,6 +6,9 @@ import Foundation
  Extends `Scheme` to match the `scheme` a URL.
  */
 extension Scheme: URLMatchable {
+  public static var missing: URLMatchable { return Missing() }
+
+
   /**
    Predicate that determines whether a `Scheme` matches a given `URL`.
    
@@ -14,5 +17,15 @@ extension Scheme: URLMatchable {
    */
   public func matches(url: URL) -> Bool {
     return url.scheme == value
+  }
+}
+
+
+
+private extension Scheme {
+  struct Missing: URLMatchable {
+    func matches(url: URL) -> Bool {
+      return url.scheme == nil
+    }
   }
 }
