@@ -22,8 +22,23 @@ public struct Host: URLMatchable {
   }
   
 
+  /**
+   A value that matches a `URL` with a `host` property of `nil`.
+   
+   Usage:
+   ```
+   let host = URL(string: "http://example.com")!
+   let noHost = URL(string: "http://")!
+   Host.missing.matches(url: host)   //> false
+   Host.missing.matches(url: noHost) //> true
+   ```
+   */
   public static let missing: URLMatchable = Missing()
+  
+  
   private let host: String
+  
+  
   /**
    Wraps the given string to create a new `Host` value. It matches `URL`s based on their `host` property.
    

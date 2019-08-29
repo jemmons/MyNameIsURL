@@ -10,6 +10,17 @@ public struct Port: URLMatchable {
   }
 
 
+  /**
+   A value that matches a `URL` with a `port` property of `nil`.
+   
+   Usage:
+   ```
+   let port = URL(string: "http://example.com:8080")!
+   let noPort = URL(string: "http://example.com")!
+   Port.missing.matches(url: port)   //> false
+   Port.missing.matches(url: noPort) //> true
+   ```
+   */
   public static let missing: URLMatchable = Missing()
   private let port: Int
   
