@@ -45,8 +45,6 @@ public struct Host: URLMatchable {
    - SeeAlso: `HostSuffix`
    
    - Parameter host: The host to match. It will be compared for equality against `URL`’s `host` property.
-   
-     This value will be compared for equality against `URL`’s `host` property.
    */
   public init(_ host: String) {
     self.host = host

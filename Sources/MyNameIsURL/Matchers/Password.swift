@@ -2,6 +2,19 @@ import Foundation
 
 
 
+/**
+ Type that matches a `URL` based on comparison with the `URL`’s `password` propery.
+ 
+ Usage:
+ ```
+ let url = URL(string: "https://user:pass@example.com")!
+ Password("pass").matches(url) //> true
+ ```
+ 
+ - Note: RFC 1738 makes a distinction between *empty* (`""`) passwords and *no* (`nil`) passwords. In the uncommon case you need to match a URL with an *empty* password (*i.e.* “http://foo:@example.com”), create a `Password` with an empty string: `Password("")`. The much more common *no* password can be matched with `Password.missing`.
+ 
+ - SeeAlso: `User`, `Password.missing`
+ */
 public struct Password: URLMatchable {
   private struct Missing: URLMatchable {
     func matches(url: URL) -> Bool {
@@ -35,11 +48,25 @@ public struct Password: URLMatchable {
   private let password: String
   
   
+  /**
+   Wraps the given string to create a new `Password` value. It matches `URL`s based on their `password` property.
+   
+   - SeeAlso: `User`
+   
+   - Parameter password: The password to match. It will be compared for equality against `URL`’s `password` property.
+   */
   public init(_ password: String ) {
     self.password = password
   }
   
   
+  /**
+   Predicate that determines whether a `Password` matches a given `URL`.
+   
+   - Parameter url: The `URL` to be matched.
+   
+   - Returns: `true` if the wrapped password is equivalent to `url.password`. Otherwise, `false`.
+   */
   public func matches(url: URL) -> Bool {
     return url.password == password
   }
