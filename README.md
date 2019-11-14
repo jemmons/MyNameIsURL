@@ -1,5 +1,6 @@
 # MyNameIsURL
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-success)](https://github.com/Apple/swift-package-manager) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-success)](https://github.com/Carthage/Carthage) [![Documentation](https://jemmons.github.io/MyNameIsURL/badge.svg)](https://jemmons.github.io/MyNameIsURL/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d642e8c25cf64ae74b27/maintainability)](https://codeclimate.com/github/jemmons/MyNameIsURL/maintainability)
 
 A package for matching URLs in Swift.
 
