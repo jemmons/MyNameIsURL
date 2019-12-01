@@ -1,0 +1,35 @@
+name: Tests Pass for Pull Request
+
+
+on: [pull_request]
+
+
+env:
+  RESULT_PATH: Output.xcresult
+  BUILD_CACHE_PATH: BuildCache
+
+
+jobs:
+  build_and_test:
+    name: Build and Test
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Shared Values
+      id: shared
+      uses: jemmons/SharedValuesAction@v1
+
+    - name: Cache Build
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.shared.outputs.buildCachePath }}
+        key: xcodebuild-${{ runner.OS }}-swift${{ steps.shared.outputs.swiftVersion }}-${{ hashFiles('Sources/**/*.swift') }}
+        restore-keys: |
+          xcodebuild-${{ runner.OS }}-swift${{ steps.shared.outputs.swiftVersion }}-
+          xcodebuild-${{ runner.OS }}-
+
+    - name: Build and Test
+      run: xcodebuild test -scheme ${{ steps.shared.outputs.project }} -enableCodeCoverage YES -resultBundlePath ${{ steps.shared.outputs.resultPath }} -derivedDataPath ${{ steps.shared.outputs.buildCachePath }}
