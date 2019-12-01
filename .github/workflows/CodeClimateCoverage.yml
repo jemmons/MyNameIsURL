@@ -1,0 +1,65 @@
+name: master # Also the name of the badge displayed in README.md
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  upload_code_coverage:
+
+    name: Upload Code Coverage
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Shared Values
+      id: shared
+      uses: jemmons/SharedValuesAction@v1
+
+    - name: Cache CodeClimate Test Reporter
+      id: cc_cache
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.shared.outputs.ccDirectory }}
+        key: CCTestReporter-${{ runner.OS }}-CC${{ steps.shared.outputs.ccVersion }}
+        restore-keys: |
+          CCTestReporter-${{ runner.OS }}-
+
+    - name: Fetch CodeClimate Test Reporter 
+      if: steps.cc_cache.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p ${{ steps.shared.outputs.ccDirectory }}
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${{ steps.shared.outputs.ccVersion }}-darwin-amd64 > ${{ steps.shared.outputs.ccPath }}
+        chmod +x ${{ steps.shared.outputs.ccPath }}
+
+    - name: Cache Build
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.shared.outputs.buildCachePath }}
+        key: xcodebuild-${{ runner.OS }}-swift${{ steps.shared.outputs.swiftVersion }}-${{ hashFiles('Sources/**/*.swift') }}
+        restore-keys: |
+          xcodebuild-${{ runner.OS }}-swift${{ steps.shared.outputs.swiftVersion }}-
+          xcodebuild-${{ runner.OS }}-
+
+    - name: Test Reporter Before
+      run: ${{ steps.shared.outputs.ccPath }} before-build
+
+    - name: Build and Test
+      run: xcodebuild test -scheme ${{ steps.shared.outputs.project }} -enableCodeCoverage YES -resultBundlePath ${{ steps.shared.outputs.resultPath }} -derivedDataPath ${{ steps.shared.outputs.buildCachePath }}
+
+    - name: Parse Coverage
+      uses: jemmons/GenerateXCCovJSONAction@v1
+      with:
+        resultfile: ${{ steps.shared.outputs.resultPath }}
+        outputpath: coverage.json
+        targets: ${{ steps.shared.outputs.project }}
+
+    - name: Test Reporter Format and Upload
+      run: ${{ steps.shared.outputs.ccPath }} after-build -t xccov -r ${{ secrets.CODECLIMATE_TOKEN }}
+      env:
+        GIT_COMMIT_SHA: ${{github.sha}}
+        GIT_BRANCH: master
+    

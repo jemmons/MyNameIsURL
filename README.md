@@ -1,6 +1,11 @@
 # MyNameIsURL
-[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-success)](https://github.com/Apple/swift-package-manager) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-success)](https://github.com/Carthage/Carthage) [![Documentation](https://jemmons.github.io/MyNameIsURL/badge.svg)](https://jemmons.github.io/MyNameIsURL/)
+
+[![Swift Package](https://img.shields.io/static/v1?label=Swift&message=Package&logo=Swift&color=fa7343&style=flat)](https://github.com/Apple/swift-package-manager)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-success)](https://github.com/Carthage/Carthage)
+[![Documentation](https://jemmons.github.io/MyNameIsURL/badge.svg)](https://jemmons.github.io/MyNameIsURL/)
+[![Tests](https://github.com/jemmons/MyNameIsURL/workflows/master/badge.svg)](https://github.com/jemmons/MyNameIsURL/actions?query=workflow%3A%22master%22)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d642e8c25cf64ae74b27/maintainability)](https://codeclimate.com/github/jemmons/MyNameIsURL/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d642e8c25cf64ae74b27/test_coverage)](https://codeclimate.com/github/jemmons/MyNameIsURL/test_coverage)
 
 A package for matching URLs in Swift.
 

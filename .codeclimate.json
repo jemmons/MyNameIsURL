@@ -1,0 +1,17 @@
+{
+  "version": "2",
+  "checks": { 
+    "argument-count": {
+      "enabled": false
+    }
+  },
+  "plugins": {
+    "swiftlint": {
+      "enabled": true
+    }
+  },
+  "exclude_patterns": [
+    "docs/",
+    "Tests/"
+  ]
+}
